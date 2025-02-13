@@ -44,68 +44,108 @@ body {
   height:60px;
   background: transparent;
   border: 6px solid rgba(255,255,255,0.8);
-  top: 70%;
-  left: 50%;
+  top: 12%;
+  left: 42%;
   animation: animate 8s linear infinite;
 }
 
 .square2 {
   position: absolute;
   width: 60px;
-  height:60px;
+  height: 60px;
   background: transparent;
   border: 6px solid rgba(255,255,255,0.8);
   top: 70%;
   left: 50%;
-  animation: animate 8s linear infinite;
+  animation: animate 6s linear infinite;
 }
 
 .square3 {
-  top: 70%;
-  left: 50%;
-  animation: animate 9s linear infinite;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
+  top: 17%;
+  left: 6%;
+  animation: animate 10s linear infinite;
 }
 
 .square4 {
-  top: 40%;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
+  top: 20%;
   left: 60%;
-  animation: animate 8s linear infinite;
+  animation: animate 4s linear infinite;
 }
 
 .square5 {
-  top: 22%;
-  left: 42%;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
+  top: 67%;
+  left: 10%;
   animation: animate 7s linear infinite;
 }
 
-.square:nth-child(5){
+.square6 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
   top: 80%;
-  left: 30%;
+  left: 70%;
+  animation: animate 9s linear infinite;
+}
+
+.square7 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
+  top: 60%;
+  left: 80%;
   animation: animate 3s linear infinite;
 }
 
-.square:nth-child(6){
-  top: 12%;
-  left: 50%;
-  animation: animate 5s linear infinite;
+.square8 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
+  top: 32%;
+  left: 25%;
+  animation: animate 6s linear infinite;
 }
 
-.square:nth-child(7){
+.square9 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
   top: 90%;
-  left: 10%;
-  animation: animate 5s linear infinite;
+  left: 25%;
+  animation: animate 4s linear infinite;
 }
 
-.square:nth-child(8){
-  top: 70%;
-  left: 20%;
-  animation: animate 7s linear infinite;
-}
-
-.square:nth-child(9){
-  top: 26%;
+.square10 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 6px solid rgba(255,255,255,0.8);
+  top: 20%;
   left: 80%;
-  animation: animate 2s linear infinite;
+  animation: animate 9s linear infinite;
 }
 
 @keyframes animate {
