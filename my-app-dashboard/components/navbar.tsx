@@ -15,7 +15,7 @@ export default function Navbar() {
     }, [darkMode]);
 
     return (
-        <header style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }} className="shadow-md sticky top-0 z-50">
+        <header style={{ backgroundColor: 'rgba(255, 255, 254, 0.5)' }} className="shadow-md sticky top-0 z-50">
             <nav className="container mx-auto flex justify-between items-center py-4 px-6">
                 {/* Logo */}
                 <Link href="/">
