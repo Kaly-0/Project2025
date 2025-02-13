@@ -15,7 +15,7 @@ export default function Navbar() {
     }, [darkMode]);
 
     return (
-        <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+        <header style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }} className="shadow-md sticky top-0 z-50">
             <nav className="container mx-auto flex justify-between items-center py-4 px-6">
                 {/* Logo */}
                 <Link href="/">
@@ -34,9 +34,11 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-blue-400 dark:hover:text-blue-300 transition">
-                            Carte du monde
-                        </a>
+                        <Link href="#" passHref>
+                            <button className="hover:text-blue-300 dark:hover:text-blue-200 transition">
+                                Carte du monde
+                            </button>
+                        </Link>
                     </li>
                     <li>
                         <Link href="#" passHref>
