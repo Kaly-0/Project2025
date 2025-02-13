@@ -20,7 +20,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/">
                     <span className="cursor-pointer text-3xl font-extrabold bg-gradient-to-r from-blue-950 via-blue-800 to-blue-400 text-transparent bg-clip-text tracking-widest">
-                        Steam4Free
+                        CyberWatch
                     </span>
                 </Link>
 
@@ -29,19 +29,19 @@ export default function Navbar() {
                     <li>
                         <Link href="#" passHref>
                             <button className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-                                Jeux
+                                Cyber-attaques
                             </button>
                         </Link>
                     </li>
                     <li>
                         <a href="#" className="hover:text-blue-400 dark:hover:text-blue-300 transition">
-                            Gratuit
+                            Carte du monde
                         </a>
                     </li>
                     <li>
                         <Link href="#" passHref>
                             <button className="hover:text-blue-300 dark:hover:text-blue-200 transition">
-                                Promotions
+                                Conseils
                             </button>
                         </Link>
                     </li>
