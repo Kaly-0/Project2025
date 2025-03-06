@@ -1,18 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+
 import Link from "next/link";
 
 export default function Navbar() {
-    const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    }, [darkMode]);
 
     return (
         <header style={{ backgroundColor: 'rgba(255, 255, 254, 0.5)' }} className="shadow-md sticky top-0 z-50">
@@ -34,8 +25,8 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="#" passHref>
-                            <button className="hover:text-blue-300 dark:hover:text-blue-200 transition">
+                        <Link href="/Carte-du-monde" passHref>
+                            <button className="hover:text-blue-400 dark:hover:text-blue-300 transition">
                                 Carte du monde
                             </button>
                         </Link>
@@ -48,14 +39,6 @@ export default function Navbar() {
                         </Link>
                     </li>
                 </ul>
-
-                {/* Dark Mode Toggle */}
-                <button
-                    onClick={() => setDarkMode(!darkMode)}
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition"
-                >
-                    {darkMode ? <span className="text-2xl">🌙</span> : <span className="text-2xl">☀️</span>}
-                </button>
             </nav>
         </header>
     );
