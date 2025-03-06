@@ -1,10 +1,27 @@
 {
-  "name": "my-app-dashboard",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@amcharts/amcharts5-fonts",
+  "version": "5.0.1",
+  "author": "amCharts <contact@amcharts.com> (https://www.amcharts.com/)",
+  "description": "amCharts 5 Fonts",
+  "homepage": "https://www.amcharts.com/",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://www.amcharts.com/support/",
+    "email": "contact@amcharts.com"
   },
-  "private": true
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amcharts/amcharts5.git"
+  },
+  "keywords": [
+    "amcharts",
+    "javascript",
+    "charts",
+    "typescript",
+    "fonts"
+  ],
+  "dependencies": {
+    "@amcharts/amcharts5": "^5.11.1",
+    "@amcharts/amcharts5-geodata": "^5.1.4"
+  }
 }
