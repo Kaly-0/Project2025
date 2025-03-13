@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.categoryCard {
+    background-color: #1f2c3b;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.categoryCard:hover {
+    transform: translateY(-5px);
+}
+
+.categoryTitle {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tipsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tipItem {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #f0f0f0;
+}
+
+.categoryCard:hover .categoryTitle {
+    color: #00ffcc;
+}
