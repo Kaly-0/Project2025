@@ -18,7 +18,7 @@ export default function Navbar() {
                 {/* Navigation Links */}
                 <ul className="flex justify-center space-x-10 text-gray-700 dark:text-gray-300 font-semibold">
                     <li>
-                        <Link href="#" passHref>
+                        <Link href="/Cyber-attaques" passHref>
                             <button className="hover:text-blue-600 dark:hover:text-blue-400 transition">
                                 Cyber-attaques
                             </button>
@@ -32,7 +32,7 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="#" passHref>
+                        <Link href="/Conseils" passHref>
                             <button className="hover:text-blue-300 dark:hover:text-blue-200 transition">
                                 Conseils
                             </button>
