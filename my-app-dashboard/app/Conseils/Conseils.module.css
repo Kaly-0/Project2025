@@ -1,46 +1,71 @@
 .container {
+    padding: 2rem;
+    scroll-behavior: smooth;
+}
+
+.mainTitle {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.categoriesNav {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
-    padding: 40px;background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: #f5f5f5;
-    min-height: 100vh;
+    gap: 1rem;
+    margin-bottom: 3rem;
 }
 
 .categoryCard {
-    background-color: #1f2c3b;
-    color: #ffffff;
-    padding: 20px;
+    background-color: #1e293b;
+    color: #00ffff;
+    padding: 1rem 2rem;
     border-radius: 10px;
-    width: 300px;
-    position: relative;
-    transition: transform 0.3s;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .categoryCard:hover {
-    transform: translateY(-5px);
+    background-color: #334155;
+    transform: translateY(-3px);
 }
 
-.categoryTitle {
-    font-size: 1.5rem;
+.categoryLabel {
+    font-weight: bold;
+}
+
+.sectionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detailedSection {
+    background-color: #0f172a;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.detailedTitle {
     color: #00ffff;
-    margin-bottom: 10px;
-    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 .tipsList {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .tipItem {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    color: #f0f0f0;
-}
-
-.categoryCard:hover .categoryTitle {
-    color: #00ffcc;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
 }
