@@ -11,7 +11,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/">
                     <span className="cursor-pointer text-3xl font-extrabold bg-gradient-to-r from-blue-950 via-blue-800 to-blue-400 text-transparent bg-clip-text tracking-widest">
-                        CyberWatch
+                        CyberTool
                     </span>
                 </Link>
 
