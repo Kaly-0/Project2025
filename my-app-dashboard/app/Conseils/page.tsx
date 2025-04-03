@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Conseils.module.css';
 
 const conseilsData = [
@@ -98,46 +98,36 @@ const conseilsData = [
 ];
 
 const ConseilsPage = () => {
-    const handleScroll = (id: string) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const toggleSection = (index: number) => {
+        setActiveIndex(prev => (prev === index ? null : index));
     };
 
     return (
         <div className={styles.container}>
             <h1 className={styles.mainTitle}>🛡️ Conseils de Cybersécurité</h1>
 
-            {/* Navigation des catégories */}
-            <div className={styles.categoriesNav}>
+            <div className={styles.accordionContainer}>
                 {conseilsData.map((section, index) => (
-                    <button
-                        key={index}
-                        className={styles.categoryCard}
-                        onClick={() => handleScroll(`section-${index}`)}
-                    >
-                        <span className={styles.categoryLabel}>
-                            {section.icon} {section.label}
-                        </span>
-                    </button>
-                ))}
-            </div>
+                    <div key={index} className={styles.accordionItem}>
+                        <button
+                            className={styles.accordionHeader}
+                            onClick={() => toggleSection(index)}
+                        >
+                            <span>{section.icon} {section.label}</span>
+                            <span>{activeIndex === index ? '−' : '+'}</span>
+                        </button>
 
-            {/* Sections détaillées */}
-            <div className={styles.sectionsContainer}>
-                {conseilsData.map((section, index) => (
-                    <div
-                        key={index}
-                        id={`section-${index}`}
-                        className={styles.detailedSection}
-                    >
-                        <h2 className={styles.detailedTitle}>{section.icon} {section.label}</h2>
-                        <ul className={styles.tipsList}>
-                            {section.tips.map((tip, idx) => (
-                                <li key={idx} className={styles.tipItem}>{tip}</li>
-                            ))}
-                        </ul>
+                        {activeIndex === index && (
+                            <div className={styles.accordionContent}>
+                                <ul className={styles.tipsList}>
+                                    {section.tips.map((tip, idx) => (
+                                        <li key={idx} className={styles.tipItem}>{tip}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>

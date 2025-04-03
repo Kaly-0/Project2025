@@ -1,8 +1,55 @@
-.container {
-    padding: 2rem;
-    scroll-behavior: smooth;
+.accordionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
+.accordionItem {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+}
+
+.accordionHeader {
+    background-color: #1e293b;
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordionHeader:hover {
+    background-color: #334155;
+}
+
+.accordionContent {
+    padding: 1rem 1.5rem;
+    background-color: #0f172a;
+    color: white;
+}
+
+.tipItem {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.tipItem::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #00ffff;
+}
+
+/* ✅ Ajout pour styliser le titre principal */
 .mainTitle {
     text-align: center;
     font-size: 3rem;
@@ -12,60 +59,4 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-}
-
-.categoriesNav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-.categoryCard {
-    background-color: #1e293b;
-    color: #00ffff;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-
-.categoryCard:hover {
-    background-color: #334155;
-    transform: translateY(-3px);
-}
-
-.categoryLabel {
-    font-weight: bold;
-}
-
-.sectionsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.detailedSection {
-    background-color: #0f172a;
-    padding: 2rem;
-    border-radius: 12px;
-}
-
-.detailedTitle {
-    color: #00ffff;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-}
-
-.tipsList {
-    list-style: none;
-    padding: 0;
-}
-
-.tipItem {
-    margin-bottom: 0.5rem;
-    color: #ffffff;
 }
