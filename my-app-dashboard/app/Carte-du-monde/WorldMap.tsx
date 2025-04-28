@@ -31,6 +31,42 @@ export default function WorldMap() {
             })
         );
 
+
+        const labelSeries = am5.Container.new(root, {
+            x: am5.percent(2),
+            y: am5.percent(90),
+            layout: root.verticalLayout
+        });
+
+        labelSeries.children.push(
+            am5.Label.new(root, {
+                text: "n°1",
+                fontSize: 16,
+                fill: am5.color(0xffffff),
+                fontWeight: "500",
+            })
+        );
+
+        labelSeries.children.push(
+            am5.Label.new(root, {
+                text: "n°2",
+                fontSize: 16,
+                fill: am5.color(0xffffff),
+                fontWeight: "500",
+            })
+        );
+
+        labelSeries.children.push(
+            am5.Label.new(root, {
+                text: "n°3",
+                fontSize: 16,
+                fill: am5.color(0xffffff),
+                fontWeight: "500",
+
+            })
+
+        );
+
         // Apparence des pays
         polygonSeries.mapPolygons.template.setAll({
             tooltipText: "{name}",
@@ -66,6 +102,7 @@ export default function WorldMap() {
         return () => {
             root.dispose();
         };
+
     }, []);
 
     return <div id="chartdiv" style={{ width: "100%", height: "900px" }}></div>;
