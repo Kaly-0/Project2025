@@ -34,10 +34,6 @@ body {
   }
 }
 
-.navbar {
-  background-color: transparent;
-}
-
 .square {
   position: absolute;
   width: 60px;
@@ -158,3 +154,4 @@ body {
     opacity: 0;
   }
 }
+

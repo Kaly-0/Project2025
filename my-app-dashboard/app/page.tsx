@@ -11,10 +11,10 @@ const HomePage = () => {
             <div className={styles.content}>
                 <header className={styles.hero}>
                     <h1 className={styles.title}>
-                        Bienvenue sur <span className={styles.highlight}>CyberWatch</span>
+                        Bienvenue sur <span className={styles.highlight}>CyberTool</span>
                     </h1>
                     <p className={styles.subtitle}>
-                        Protégez-vous contre les cybermenaces avec notre tableau de bord interactif.
+                        Renseignez-vous sur les cybermenaces et cyberattaques avec notre tableau de bord interactif.
                     </p>
 
                     <div className={styles.buttons}>
@@ -37,7 +37,7 @@ const HomePage = () => {
                         <p>Visualisez les cyberattaques en temps réel sur une carte interactive.</p>
                     </div>
                     <div className={styles.feature}>
-                        <h3>📊 Dashboard Complet</h3>
+                        <h3>📊 Dashboard</h3>
                         <p>Analysez les tendances et statistiques sur les menaces mondiales.</p>
                     </div>
                 </section>
