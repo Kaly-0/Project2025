@@ -57,7 +57,30 @@ li {
     padding: 2rem;
 }
 
-body {
-    background-color: green;
-    color: black;
+.test-layout {
+    display: flex;
+    height: 100vh;
+}
+
+.test-sidebar {
+    width: 220px;
+    background: #00128a;
+    color: white;
+    padding: 1rem;
+}
+
+.test-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.test-sidebar li {
+    margin-bottom: 1rem;
+}
+
+.test-content {
+    flex-grow: 1;
+    padding: 2rem;
+    background: linear-gradient(to right, #00128a, #00bfff);
+    color: white;
 }
