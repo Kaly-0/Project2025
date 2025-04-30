@@ -64,7 +64,10 @@ Des tests manuels seront réalisés sur :
 - **Le système de filtres**
 
 ## 📜 Licence
-Projet sous licence MIT.
+**Tous droits réservés.**  
+Ce projet est protégé par le droit d’auteur.  
+Il est interdit de copier, utiliser, modifier, distribuer ou réutiliser le code sans autorisation explicite des auteurs.
+
 
 ## 👥 Auteurs
 - Jankowski Hugo Co-fondateur de CyberTool
