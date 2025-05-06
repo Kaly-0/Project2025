@@ -1,42 +1,77 @@
-.container {
+.testContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #00008b, #00bfff);
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.testCard {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2.5rem 3rem;
+    border-radius: 15px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.testTitle {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    min-height: 100vh;
+    gap: 2rem;
 }
 
-.title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #1a202c;
-}
-
-.description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #4a5568;
-}
-
-.buttonGroup {
-    display: flex;
-    gap: 1rem;
-}
-
-.button {
-    padding: 0.8rem 1.6rem;
-    border: none;
-    border-radius: 6px;
-    background-color: #3182ce;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
+.questionBlock {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #2b6cb0;
+.questionBlock:hover {
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
+.questionBlock p {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.questionBlock label {
+    display: block;
+    margin: 0.4rem 0;
+    cursor: pointer;
+}
+
+.questionBlock input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #00eaff;
+}
+
+.submitButton {
+    background-color: #00eaff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #00c2d1;
+}
