@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #0f172a, #0e7490, #08c5e8, #0369a1);
+    background: linear-gradient(-45deg, #0f172a, #0e7490, #06d0f8, #0369a1);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     padding: 2rem;
