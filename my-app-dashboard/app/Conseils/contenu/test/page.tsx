@@ -197,12 +197,34 @@ export default function CyberTest() {
         setAnswers({ ...answers, [questionId]: value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
         const totalScore = Object.values(answers).reduce((acc, val) => acc + val, 0);
+
+        let niveau: string;
+        if (totalScore < 20) {
+            niveau = 'Débutant';
+        } else if (totalScore < 40) {
+            niveau = 'Intermédiaire';
+        } else {
+            niveau = 'Avancé';
+        }
+
+        // Envoi des données à l'API
+        await fetch('/api/submit-result', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ score: totalScore, niveau }),
+        });
+
+        // Mise à jour de l’état après l'envoi
         setScore(totalScore);
         setSubmitted(true);
     };
+
 
     return (
         <div className={styles.testContainer}>

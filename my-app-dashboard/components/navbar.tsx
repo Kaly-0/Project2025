@@ -58,6 +58,13 @@ export default function Navbar() {
                             </button>
                         </Link>
                     </li>
+                    <li>
+                        <Link href="/Login" passHref>
+                            <button className="hover:text-blue-300 dark:hover:text-blue-200 transition">
+                                Se connecter
+                            </button>
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>
