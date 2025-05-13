@@ -1,57 +1,107 @@
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 80vh;
-    background: linear-gradient(135deg, #00128a, #00bade);
-    color: white;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(-45deg, #03167a, #0e7490, #08c5e8, #0369a1);
+    min-height: 100vh;
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    padding: 50px 40px;
+    width: 100%;
     max-width: 400px;
-    margin: 4rem auto;
+    text-align: center;
+    color: #ffffff;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 .title {
     font-size: 2rem;
+    margin-top: -140px;
     font-weight: bold;
-    margin-bottom: 2rem;
+    height: 70px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    gap: 20px;
 }
 
 .input {
-    padding: 0.75rem 1rem;
+    padding: 10px 12px;
     border: none;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+    border-radius: 8px;
     font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+    color: black;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 2px #00bade;
 }
 
 .button {
-    padding: 0.75rem 1rem;
-    background-color: #00bade;
-    color: white;
+    padding: 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    background-color: #00bade;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.4s ease;
 }
 
 .button:hover {
-    background-color: #0099a8;
+    background-color: #009ac1;
+}
+
+.switch {
+    margin-top: 15px;
+    font-size: 0.9rem;
 }
 
 .link {
-    margin-top: 1rem;
-    text-align: center;
-    color: #fff;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link:hover {
     text-decoration: underline;
-    cursor: pointer;
+    color: #002dc1;
+
+}
+
+.message {
+    margin-bottom: 15px;
+    color: #ffdddd;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
 }

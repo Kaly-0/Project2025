@@ -3,7 +3,7 @@
 import React from 'react'
 import { supabase } from "@/lib/supabaseClient"
 import { useRouter } from 'next/navigation';
-import styles from "./perso.module.css"
+import styles from "./deconnexion.module.css"
 
 function Personnalisee() {
     const router = useRouter();
