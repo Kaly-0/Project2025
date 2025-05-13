@@ -29,7 +29,7 @@ function Login() {
         }
 
         if (data) {
-            router.push("/perso");
+            router.push("/deconnexion");
             return null;
         }
 
