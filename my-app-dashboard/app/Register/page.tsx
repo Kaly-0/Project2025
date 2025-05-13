@@ -1,18 +1,17 @@
 "use client"
 
-import React, {useState} from "react";
-import { supabase } from "@/lib/supabaseClient.ts"
+import React, { useState } from "react";
+import { supabase } from "@/lib/supabaseClient.ts";
 import Link from "next/link";
 import styles from "./Register.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function Register() {
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    //const [confirmPassword, setConfirmPassword] = useState("");
-    //const [loading, setLoading] = useState(false);
-    //const [error, setError] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleDiscordLogin = async () => {
         const { error } = await supabase.auth.signInWithOAuth({
@@ -24,12 +23,12 @@ function Register() {
         }
     };
 
-    const handleSubmit= async (event : React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         setMessage("");
 
         const { data, error } = await supabase.auth.signUp({
-            email : email,
+            email: email,
             password: password,
         });
 
@@ -61,21 +60,28 @@ function Register() {
                         required
                         className={styles.input}
                     />
-                    <input
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                        type="password"
-                        placeholder="Password"
-                        required
-                        className={styles.input}
-                    />
+                    <div className={styles.passwordContainer}>
+                        <input
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
+                            required
+                            className={styles.passwordInput}
+                        />
+                        <span
+                            className={styles.eyeIcon}
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye}/>
+    </span>
+                    </div>
                     <button type="submit" className={styles.button}>
                         Créez votre compte
                     </button>
-                    <button onClick={handleDiscordLogin}>
+                    <button type="button" onClick={handleDiscordLogin}>
                         Se connecter avec Discord
                     </button>
-
                 </form>
 
                 <p className={styles.switch}>

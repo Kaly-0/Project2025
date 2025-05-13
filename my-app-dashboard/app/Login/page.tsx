@@ -1,25 +1,28 @@
 "use client"
 
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { supabase } from "@/lib/supabaseClient.ts"
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import styles from "./Login.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 
 function Login() {
 
     const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [message, setMessage] = useState("");
 
-
-    const handleSubmit= async (event : React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         setMessage("");
 
         const { data, error } = await supabase.auth.signInWithPassword({
-            email : email,
+            email: email,
             password: password,
         });
 
@@ -52,14 +55,24 @@ function Login() {
                         required
                         className={styles.input}
                     />
-                    <input
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                        type="password"
-                        placeholder="Password"
-                        required
-                        className={styles.input}
-                    />
+
+                    <div className={styles.passwordContainer}>
+                        <input
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
+                            required
+                            className={styles.input}
+                        />
+                        <span
+                            onClick={() => setShowPassword(!showPassword)}
+                            className={styles.eyeIcon}
+                        >
+        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye}/>
+    </span>
+                    </div>
+
                     <button type="submit" className={styles.button}>Se connecter</button>
                 </form>
 
@@ -70,7 +83,6 @@ function Login() {
             </div>
         </div>
     );
-
 }
 
 export default Login;
