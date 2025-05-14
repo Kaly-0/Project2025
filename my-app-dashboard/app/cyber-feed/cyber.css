@@ -1,0 +1,43 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 2rem;
+}
+
+.article {
+    background: #ffffff10;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #ffcc00;
+}
+
+.article h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: #ffcc00;
+}
+
+.article p {
+    margin: 0.5rem 0;
+    color: #ddd;
+}
+
+.article a {
+    color: #00bfff;
+    text-decoration: underline;
+}
+
+.article a:hover {
+    color: #ffcc00;
+}
