@@ -65,13 +65,6 @@ export default function Navbar() {
                             </button>
                         </Link>
                     </li>
-                    <li>
-                        <Link href="/cyber-feed" passHref>
-                            <button className="hover:text-blue-300 dark:hover:text-blue-200 transition">
-                                Page actualité
-                            </button>
-                        </Link>
-                    </li>
                 </ul>
             </nav>
         </header>

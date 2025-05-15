@@ -16,7 +16,7 @@
 
 body {
   color: var(--foreground);
-  background: linear-gradient(90deg, rgba(0,0,139) 0%, rgba(9,9,121,1) 35%, rgba(0,191,255) 100%);
+  background: linear-gradient(to right, #0A2540, midnightblue, #797CEFFF);
   margin: 0;
   padding: 0;
 
