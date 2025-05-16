@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import '../app/dashboard-test/styles.css';
 import BarChartExample from '@/components/CountryChart.tsx';
 import CyberFeedPage from "@/app/cyber-feed/page";
+//import DashboardHome from "@/app/dashboard-test/accueil/page.tsx";
 
 const DashboardLayout = () => {
     const [activeSection, setActiveSection] = useState('accueil');
@@ -33,16 +34,21 @@ const DashboardLayout = () => {
                 </ul>
             </aside>
 
-            {/* Content */}
             <div className="content">
                 {activeSection === 'accueil' && <h1>Bienvenue sur le tableau de bord Accueil !</h1>}
+                    <>
+
+                    </>
+
                 {activeSection === 'statistiques' && (
                     <>
-                        <h1>Voici vos Statistiques 🔥</h1>
+                        <h1></h1>
                         <BarChartExample />
                     </>
                 )}
                 {activeSection === 'chiffres' && <h1>Analyse des Chiffres 📊</h1>}
+
+
                 {activeSection === 'tendances' && (
                     <>
                         <h1></h1>
