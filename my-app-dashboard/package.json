@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.7",
+    "next": "15.2.4",
     "@amcharts/amcharts5": "^5.11.1",
     "@amcharts/amcharts5-geodata": "^5.1.4",
     "chart.js": "^4.4.8",
