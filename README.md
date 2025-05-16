@@ -26,6 +26,12 @@ CyberTool a été conçu pour répondre au besoin croissant d'avoir une vision c
 - [x] 📝 Mini formulaire pour **évaluer son niveau de cybersécurité**.
 - [x] 🛡️ Génération de **listes de conseils adaptées** (débutant 🟢/ intermédiaire 🟠/ avancé 🔵).
 
+**Partie Authentification :**
+- [x] 🔐 Système d'authentification avec **création de compte** et **connexion sécurisée**
+- [x] 📨 **Vérification d'email** via Supabase
+- [x] 🗝️ **Connexion avec email et mot de passe**
+- [x] 🚪 **Déconnexion sécurisée**
+
 ## 🖌️ Wireframe
 - Excalidraw
 
