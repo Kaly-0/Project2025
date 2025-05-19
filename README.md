@@ -28,7 +28,7 @@ CyberTool a été conçu pour répondre au besoin croissant d'avoir une vision c
 
 **Partie Authentification :**
 - [x] 🔐 Système d'authentification avec **création de compte** et **connexion sécurisée**
-- [x] 📨 **Vérification d’email** via Supabase
+- [x] 📨 **Vérification d'email** via Supabase
 - [x] 🗝️ **Connexion avec email et mot de passe**
 - [x] 🚪 **Déconnexion sécurisée**
 

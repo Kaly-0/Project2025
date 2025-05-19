@@ -40,11 +40,11 @@ export default function CyberTest() {
         },
         {
             id: "q4",
-            question: "Savez-vous ce qu’est l’authentification à deux facteurs (2FA) et l'avez-vous activé ?",
+            question: "Savez-vous ce qu'est l'authentification à deux facteurs (2FA) et l'avez-vous activé ?",
             options: [
                 { label: "Non, jamais entendu, et je ne l'ai pas activé", value: 0 },
                 { label: "Oui je connais, je l'ai activé sur certains comptes", value: 2 },
-                { label: "Oui, je l’ai activé sur tous mes comptes", value: 3 },
+                { label: "Oui, je l'ai activé sur tous mes comptes", value: 3 },
             ],
         },
         {
@@ -70,7 +70,7 @@ export default function CyberTest() {
             question: "Protégez-vous votre ordinateur avec un antivirus ?",
             options: [
                 { label: "Non, je ne pense pas que ce soit utile", value: 0 },
-                { label: "J’ai un antivirus gratuit", value: 2 },
+                { label: "J'ai un antivirus gratuit", value: 2 },
                 { label: "Oui, à jour et actif", value: 3 },
             ],
         },
@@ -79,7 +79,7 @@ export default function CyberTest() {
             question: "Utilisez-vous des outils pour détecter des fuites de données personnelles ?",
             options: [
                 { label: "Non, je ne connais pas", value: 0 },
-                { label: "Oui, j’ai déjà regardé une fois", value: 2 },
+                { label: "Oui, j'ai déjà regardé une fois", value: 2 },
                 { label: "Oui, je fais des vérifications régulières", value: 3 },
             ],
         },
@@ -114,8 +114,8 @@ export default function CyberTest() {
             id: "q12",
             question: "Utilisez-vous un VPN quand vous êtes sur un Wi-Fi public ?",
             options: [
-                { label: "Non, je ne savais pas qu’il fallait", value: 0},
-                { label: "Parfois, selon l’endroit", value: 2},
+                { label: "Non, je ne savais pas qu'il fallait", value: 0},
+                { label: "Parfois, selon l'endroit", value: 2},
                 { label: "Oui, toujours", value: 3},
             ],
         },
@@ -124,8 +124,8 @@ export default function CyberTest() {
             question: "Savez-vous reconnaître un mail de phishing ?",
             options: [
                 { label: "Non, je clique si cela me semble pro", value: 0},
-                { label: "Je fais attention à l’adresse mail et aux fautes d'orthographe", value: 2},
-                { label: "Je vérifie l’en-tête, le domaine, et les liens sans cliquer", value: 3},
+                { label: "Je fais attention à l'adresse mail et aux fautes d'orthographe", value: 2},
+                { label: "Je vérifie l'en-tête, le domaine, et les liens sans cliquer", value: 3},
             ],
         },
         {
@@ -157,7 +157,7 @@ export default function CyberTest() {
         },
         {
             id: "q17",
-            question: "Quelle est votre réaction si votre navigateur vous affiche “connexion non sécurisée” ?",
+            question: "Quelle est votre réaction si votre navigateur vous affiche 'connexion non sécurisée' ?",
             options: [
                 { label: "Je continue sans faire attention", value: 0},
                 { label: "Je rafraîchis la page", value: 2},
@@ -170,15 +170,15 @@ export default function CyberTest() {
             options: [
                 { label: "Je les note dans un carnet ou bloc-notes", value: 0},
                 { label: "Je les mémorise tous", value: 2},
-                { label: "J’utilise un gestionnaire sécurisé (LastPass, Bitwarden, Dashlane, etc.)", value: 3},
+                { label: "J'utilise un gestionnaire sécurisé (LastPass, Bitwarden, Dashlane, etc.)", value: 3},
             ],
         },
         {
             id: "q19",
             question: "Que faites-vous après avoir découvert une faille sur votre système ou appareil ?",
             options: [
-                { label: "Je continue à l’utiliser normalement", value: 0},
-                { label: "J’attends une mise à jour automatique", value: 2},
+                { label: "Je continue à l'utiliser normalement", value: 0},
+                { label: "J'attends une mise à jour automatique", value: 2},
                 { label: "Je fais une recherche, applique un patch, et/ou notifie un responsable", value: 3},
             ],
         },
@@ -220,7 +220,7 @@ export default function CyberTest() {
             body: JSON.stringify({ score: totalScore, niveau }),
         });
 
-        // Mise à jour de l’état après l'envoi
+        // Mise à jour de l'état après l'envoi
         setScore(totalScore);
         setSubmitted(true);
     };

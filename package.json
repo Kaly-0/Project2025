@@ -34,6 +34,7 @@
     "react-leaflet": "^5.0.0",
     "recharts": "^2.15.3",
     "rss-parser": "^3.13.0",
+    "supabase": "^2.22.12",
     "victory": "^37.3.6"
   },
   "devDependencies": {
