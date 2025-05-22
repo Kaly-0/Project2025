@@ -9,17 +9,30 @@
 
 .pageTitle {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     color: #cbd5e1;
     text-align: center;
 }
 
-.articleCard {
-    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+.mainArticle {
+    background: linear-gradient(to right, #1d4ed8, #3b82f6);
+    padding: 2rem;
     border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.articleList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.articleCard {
+    background: linear-gradient(to right, #1e3a8a, #2563eb);
     padding: 1.5rem 2rem;
-    margin-bottom: 1.8rem;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     transition: transform 0.2s ease;
 }
 
@@ -28,14 +41,19 @@
 }
 
 .articleHeader {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .title {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 1.4rem;
     font-weight: 600;
     color: #f1f5f9;
-    margin-bottom: 0.4rem;
 }
 
 .meta {
@@ -46,27 +64,22 @@
 
 .description {
     font-size: 1rem;
-    margin-top: 0.5rem;
     line-height: 1.6;
+    margin-top: 0.75rem;
     color: #e2e8f0;
 }
 
 .readMore {
     margin-top: 1rem;
-    background-color: #2563eb;
+    background-color: #1d4ed8;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .readMore:hover {
-    background-color: #1d4ed8;
-}
-
-.body {
-    padding: 2rem;
-    background: linear-gradient(to right, #0A2540, midnightblue, #797CEFFF);
+    background-color: #2563eb;
 }
