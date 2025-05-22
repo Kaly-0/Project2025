@@ -54,7 +54,7 @@ export default function Navbar() {
                     <li>
                         <Link href="/dashboard-test" passHref>
                             <button className="hover:text-blue-300 dark:hover:text-blue-200 transition">
-                                Test
+                                Dashboard
                             </button>
                         </Link>
                     </li>
