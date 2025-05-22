@@ -1,0 +1,67 @@
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    background: linear-gradient(to bottom, #0f172a, #1e293b);
+}
+
+.pageTitle {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #cbd5e1;
+    text-align: center;
+}
+
+.articleCard {
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.articleCard:hover {
+    transform: translateY(-3px);
+}
+
+.articleHeader {
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 0.4rem;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: #d1d5db;
+    font-style: italic;
+}
+
+.description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+.readMore {
+    margin-top: 1rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.readMore:hover {
+    background-color: #1d4ed8;
+}
