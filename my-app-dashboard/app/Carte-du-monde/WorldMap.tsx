@@ -27,7 +27,8 @@ export default function WorldMap() {
         const polygonSeries = chart.series.push(
             am5map.MapPolygonSeries.new(root, {
                 geoJSON: am5geodata_worldLow,
-                exclude: ["AQ"]
+                exclude: ["AQ"],
+                valueField: "value"
             })
         );
 
@@ -69,10 +70,10 @@ export default function WorldMap() {
 
         // Apparence des pays
         polygonSeries.mapPolygons.template.setAll({
-            tooltipText: "{name}",
-            toggleKey: "active",
-            interactive: true,
-            fill: am5.color(0xECE5E5)
+            stroke: am5.color(0x181414),
+            strokeWidth: 0.5,
+            strokeOpacity: 0.5,
+            tooltipText: "{name}: {value}"
         });
 
         // État quand on survol
@@ -121,6 +122,28 @@ export default function WorldMap() {
             longitudeField: "longitude"
         }));
 
+        const heatData = [
+            { id: "FR", value: 10 },
+            { id: "RU", value: 25 },
+            { id: "US", value: 40 },
+            { id: "CN", value: 18 },
+            { id: "IR", value: 30 },
+            { id: "IN", value: 22 },
+            { id: "PK", value: 8 },
+            { id: "AU", value: 12 },
+        ];
+
+        polygonSeries.set("heatRules", [{
+            target: polygonSeries.mapPolygons.template,
+            dataField: "value",
+            min: am5.color(0xfff5f5),
+            max: am5.color(0xff0000),
+            key: "fill"
+        }]);
+
+        polygonSeries.data.setAll(heatData);
+
+
         pointSeries.bullets.push(() =>
             am5.Bullet.new(root, {
                 sprite: am5.Circle.new(root, {
@@ -132,8 +155,6 @@ export default function WorldMap() {
         );
 
         pointSeries.data.setAll(mapPoints);
-
-
 
         // Zoom
         chart.set("zoomControl", am5map.ZoomControl.new(root, {}));
