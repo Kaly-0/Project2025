@@ -9,57 +9,52 @@ export default function Page() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const { data } = await supabase.from("cyber_attacks").select("*").order("id", { ascending: false });
+            const { data } = await supabase.from("cyber_attacks").select("*").order("Annee", { ascending: false }).order("Mois", { ascending: false });
             if (data) setAttacks(data);
         };
         fetchData();
     }, []);
 
-    if (attacks.length === 0) return null;
+    if (attacks.length === 0) return <div className={styles.container}>Chargement...</div>;
 
-    const latestAttack = attacks[0];
-    const otherAttacks = attacks.slice(1);
+    const [highlight, ...rest] = attacks;
 
     return (
         <div className={styles.container}>
             <h1 className={styles.pageTitle}>📰 Cyberattaques</h1>
 
-            {/* Article principal */}
-            <div className={styles.mainArticle}>
-                <div className={styles.articleHeader}>
-                    <h2 className={styles.title}>
-                        {latestAttack.Attaquant?.toUpperCase() || "Inconnu"} ➔ {latestAttack.Victime?.toUpperCase() || "Inconnu"}
-                    </h2>
-                    <p className={styles.meta}>
-                        {latestAttack.Mois} {latestAttack.Annee} • {latestAttack["Type d'attaque"] || "Type inconnu"}
-                    </p>
+            {/* À la une */}
+            <div className={styles.featured}>
+                <div className={styles.meta}>
+                    <em>{highlight.Mois} {highlight.Annee} • {highlight["Type d'attaque"] || "Type inconnu"}</em>
                 </div>
-                <p className={styles.description}>{latestAttack.Description}</p>
+                <h2 className={styles.featuredTitle}>
+                    {highlight.Attaquant?.toUpperCase() || "INCONNU"} ➔ {highlight.Victime?.toUpperCase() || "INCONNU"}
+                </h2>
+                <p className={styles.description}>{highlight.Description}</p>
             </div>
 
-            {/* Liste des autres cyberattaques */}
-            <div className={styles.articleList}>
-                {otherAttacks.map((attack) => (
-                    <div key={attack.id} className={styles.articleCard}>
-                        <div className={styles.articleHeader}>
-                            <h3 className={styles.subtitle}>
-                                {attack.Attaquant?.toUpperCase() || "Inconnu"} ➔ {attack.Victime?.toUpperCase() || "Inconnu"}
-                            </h3>
-                            <p className={styles.meta}>
-                                {attack.Mois} {attack.Annee} • {attack["Type d'attaque"] || "Type inconnu"}
-                            </p>
-                        </div>
-                        {expandedId === attack.id ? (
-                            <>
-                                <p className={styles.description}>{attack.Description}</p>
-                                <button className={styles.readMore} onClick={() => setExpandedId(null)}>Réduire</button>
-                            </>
-                        ) : (
-                            <button className={styles.readMore} onClick={() => setExpandedId(attack.id)}>Lire la suite</button>
-                        )}
+            {/* Les autres */}
+            {rest.map((attack) => (
+                <div key={attack.id} className={styles.articleCard}>
+                    <div className={styles.articleHeader}>
+                        <h3 className={styles.title}>
+                            {attack.Attaquant?.toUpperCase() || "INCONNU"} ➔ {attack.Victime?.toUpperCase() || "INCONNU"}
+                        </h3>
+                        <p className={styles.meta}>
+                            {attack.Mois} {attack.Annee} • {attack["Type d'attaque"] || "Type inconnu"}
+                        </p>
                     </div>
-                ))}
-            </div>
+                    {expandedId === attack.id ? (
+                        <>
+                            <p className={styles.description}>{attack.Description}</p>
+                            <button className={styles.readMore} onClick={() => setExpandedId(null)}>Réduire</button>
+                        </>
+                    ) : (
+                        <button className={styles.readMore} onClick={() => setExpandedId(attack.id)}>Lire la suite</button>
+                    )}
+                </div>
+            ))}
         </div>
     );
 }
