@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import '../app/dashboard-test/styles.css';
 import BarChartExample from '@/components/CountryChart'; // retire le `.tsx`
 import CyberFeedPage from "@/app/cyber-feed/page";
-// import DashboardHome from "@/app/dashboard-test/accueil/page.tsx"; // à réactiver si tu l’utilises
+// import DashboardHome from "@/app/dashboard-test/accueil/page.tsx";
+import ChiffresChart from "@/components/ChiffresChart.tsx";
 
 const DashboardLayout = () => {
     const [activeSection, setActiveSection] = useState('accueil');
@@ -49,8 +50,11 @@ const DashboardLayout = () => {
                     )}
 
                     {activeSection === 'chiffres' && (
-                        <h2 style={{color: "black"}}> Analyse des chiffres 📊</h2>
-                        )}
+                        <>
+                            <h2 style={{color: "black"}}> Analyse des chiffres 📊</h2>
+                            <ChiffresChart />
+                        </>
+                    )}
 
                     {activeSection === 'tendances' && (
                         <>
