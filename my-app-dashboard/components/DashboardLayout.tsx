@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import '../app/dashboard-test/styles.css';
 import BarChartExample from '@/components/CountryChart'; // retire le `.tsx`
-import CyberFeedPage from "@/app/cyber-feed/page";
+import CyberFeedPage from "@/app/cyber-feed/page.tsx";
 // import DashboardHome from "@/app/dashboard-test/accueil/page.tsx";
 import ChiffresChart from "@/components/ChiffresChart.tsx";
 
