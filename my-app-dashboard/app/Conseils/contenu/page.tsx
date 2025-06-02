@@ -61,8 +61,8 @@ const ConseilsPage = () => {
     const [niveau, setNiveau] = useState<typeof niveaux[number] | null>(null);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const [checkedTips, setCheckedTips] = useState<Record<string, boolean>>({});
+    const [showOnlyUnchecked, setShowOnlyUnchecked] = useState(false);
 
-    // ✅ Chargement des cases cochées après sélection du niveau
     useEffect(() => {
         if (typeof window === "undefined" || !niveau) return;
 
@@ -84,6 +84,23 @@ const ConseilsPage = () => {
     const handleReset = () => {
         setNiveau(null);
         setActiveIndex(null);
+        setShowOnlyUnchecked(false);
+    };
+
+    const handleResetTips = () => {
+        if (!niveau || typeof window === "undefined") return;
+
+        const updated: Record<string, boolean> = { ...checkedTips };
+
+        Object.entries(conseilsParNiveau[niveau]).forEach(([catLabel, tips]) => {
+            tips.forEach((_, idx) => {
+                const key = `${niveau}-${catLabel}-${idx}`;
+                delete updated[key];
+                localStorage.removeItem(key);
+            });
+        });
+
+        setCheckedTips(updated);
     };
 
     return (
@@ -106,9 +123,22 @@ const ConseilsPage = () => {
                 <>
                     <div className={styles.selectedLevel}>
                         <p><strong>Niveau sélectionné :</strong> {niveau}</p>
-                        <button className={styles.resetButton} onClick={handleReset}>
-                            🔙 Changer de niveau
-                        </button>
+                        <div className={styles.levelActions}>
+                            <button className={styles.resetButton} onClick={handleReset}>
+                                🔙 Changer de niveau
+                            </button>
+                            <button className={styles.clearButton} onClick={handleResetTips}>
+                                🧹 Réinitialiser les conseils
+                            </button>
+                            <label className={styles.toggleLabel}>
+                                <input
+                                    type="checkbox"
+                                    checked={showOnlyUnchecked}
+                                    onChange={() => setShowOnlyUnchecked(prev => !prev)}
+                                />
+                                Afficher uniquement les non cochés
+                            </label>
+                        </div>
                     </div>
 
                     <div className={styles.accordionContainer}>
@@ -125,33 +155,38 @@ const ConseilsPage = () => {
                                 {activeIndex === index && (
                                     <div className={styles.accordionContent}>
                                         <ul className={styles.tipsList}>
-                                            {(conseilsParNiveau[niveau]?.[cat.label] || []).map((tip, idx) => {
-                                                const tipKey = `${niveau}-${cat.label}-${idx}`;
-                                                const isChecked = checkedTips[tipKey] || false;
+                                            {(conseilsParNiveau[niveau]?.[cat.label] || [])
+                                                .filter((_, idx) => {
+                                                    const key = `${niveau}-${cat.label}-${idx}`;
+                                                    return !showOnlyUnchecked || !checkedTips[key];
+                                                })
+                                                .map((tip, idx) => {
+                                                    const tipKey = `${niveau}-${cat.label}-${idx}`;
+                                                    const isChecked = checkedTips[tipKey] || false;
 
-                                                const toggleTip = () => {
-                                                    const newVal = !isChecked;
-                                                    setCheckedTips(prev => ({
-                                                        ...prev,
-                                                        [tipKey]: newVal,
-                                                    }));
-                                                    localStorage.setItem(tipKey, newVal.toString());
-                                                };
+                                                    const toggleTip = () => {
+                                                        const newVal = !isChecked;
+                                                        setCheckedTips(prev => ({
+                                                            ...prev,
+                                                            [tipKey]: newVal,
+                                                        }));
+                                                        localStorage.setItem(tipKey, newVal.toString());
+                                                    };
 
-                                                return (
-                                                    <li key={idx} className={`${styles.tipItem} ${isChecked ? styles.tipDone : ""}`}>
-                                                        <label className={styles.checkboxLabel}>
-                                                            <input
-                                                                type="checkbox"
-                                                                checked={isChecked}
-                                                                onChange={toggleTip}
-                                                                className={styles.checkbox}
-                                                            />
-                                                            {tip}
-                                                        </label>
-                                                    </li>
-                                                );
-                                            })}
+                                                    return (
+                                                        <li key={idx} className={`${styles.tipItem} ${isChecked ? styles.tipDone : ""}`}>
+                                                            <label className={styles.checkboxLabel}>
+                                                                <input
+                                                                    type="checkbox"
+                                                                    checked={isChecked}
+                                                                    onChange={toggleTip}
+                                                                    className={styles.checkbox}
+                                                                />
+                                                                {tip}
+                                                            </label>
+                                                        </li>
+                                                    );
+                                                })}
                                         </ul>
                                     </div>
                                 )}
