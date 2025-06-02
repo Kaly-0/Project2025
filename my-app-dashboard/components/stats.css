@@ -1,0 +1,51 @@
+.stats-center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem auto;
+    padding: 2rem;
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.stats-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.stat-bubble {
+    background-color: white;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.stat-bubble:hover {
+    transform: scale(1.05);
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0070f3;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #222;
+    margin-top: 0.5rem;
+}
