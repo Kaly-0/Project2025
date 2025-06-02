@@ -9,6 +9,18 @@
     overflow: hidden;
     background-color: #0f172a;
     border: 1px solid #1e293b;
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .accordionHeader {
@@ -58,4 +70,88 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+
+.levelSelector {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.levelButton {
+    padding: 1.2rem 2.5rem;
+    min-width: 200px;
+    font-size: 1.25rem;
+    border-radius: 16px;
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.levelButton:hover {
+    background: linear-gradient(to right, #1e40af, #2563eb);
+    transform: scale(1.05);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+}
+
+.selectedLevel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+    color: #38bdf8;
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.resetButton {
+    background: transparent;
+    color: #60a5fa;
+    border: 2px solid #60a5fa;
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.resetButton:hover {
+    background-color: #60a5fa;
+    color: #0f172a;
+}
+
+.container {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 80vh; /* 👈 NOUVEAU : pousse le footer vers le bas */
+    display: flex;
+    flex-direction: column;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox {
+    transform: scale(1.3);
+    accent-color: #38bdf8;
+    cursor: pointer;
+}
+
+.tipDone {
+    text-decoration: line-through;
+    color: #94a3b8;
 }
