@@ -20,7 +20,7 @@ export default function CyberFeedPage() {
             setArticles(data);
         };
 
-        fetchArticles();
+       void fetchArticles();
     }, [lang]);
 
     return (
@@ -35,7 +35,7 @@ export default function CyberFeedPage() {
                 margin: "0",
                 whiteSpace: "nowrap"
             }}>
-                <span style={{color: "#000000FF"}}> Fil d'actualité Cyber </span>
+                <span style={{color: "#000000FF"}}> Fil d &apos; actualité Cyber </span>
             </h2>
 
             {/* Sélecteur de langue */}
@@ -111,7 +111,7 @@ export default function CyberFeedPage() {
                                 fontWeight: "500"
                             }}
                         >
-                            Lire l'article complet
+                            Lire l &apos;article complet
                         </a>
                         <div style={{
                             fontSize: "0.85rem",

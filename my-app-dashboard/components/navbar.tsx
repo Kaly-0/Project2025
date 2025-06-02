@@ -5,16 +5,28 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+type User = {
+    email: string;
+    username: string;
+    password?: string;
+};
+
 export default function Navbar() {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState<{ title: string; type: string; url: string }[]>([]);
-    const [user, setUser] = useState<any>(null);
+    const [user, setUser] = useState<User | null>(null); // ✅ typage explicite
     const [menuOpen, setMenuOpen] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
-        if (storedUser) setUser(JSON.parse(storedUser));
+        if (storedUser) {
+            try {
+                setUser(JSON.parse(storedUser));
+            } catch (err) {
+                console.error("Erreur parsing user:", err);
+            }
+        }
     }, []);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
