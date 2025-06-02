@@ -1,41 +1,26 @@
-"use client";
+/*import AnimatedCounter from "@/components/AnimatedCounter";
 
-import { Bar } from 'react-chartjs-2';
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Tooltip,
-    Legend
-} from 'chart.js';
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
-
-const data = {
-    labels: ['France', 'Russie', 'USA', 'Chine'],
-    datasets: [
-        {
-            label: 'Nombre d\'attaques',
-            data: [12, 28, 34, 18],
-            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-            borderRadius: 4
-        }
-    ]
-};
-
-const options = {
-    responsive: true,
-    plugins: {
-        legend: { position: 'top' as const },
-        tooltip: { enabled: true }
-    }
-};
-
-export default function ChiffresChart() {
+export default function StatsPage() {
     return (
-        <div style={{ width: '100%', maxWidth: '600px' }}>
-            <Bar data={data} options={options} />
+        <div style={{ padding: "4rem 2rem" }}>
+            <h1 style={{ textAlign: "center", fontSize: "2rem" }}>
+                Quelques chiffres clés
+            </h1>
+
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "2rem",
+                flexWrap: "wrap",
+                marginTop: "2rem"
+            }}>
+
+                <AnimatedCounter target={1200} label="Cyberattaques détectées" />
+                <AnimatedCounter target={32} label="Pays touchés" />
+                <AnimatedCounter target={87} label="Types d'attaques" />
+
+            </div>
         </div>
     );
 }
+*/
