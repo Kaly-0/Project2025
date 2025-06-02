@@ -3,14 +3,30 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import styles from "./Cyberattaques.module.css";
 
+// ✅ Définir un type propre pour chaque attaque
+type CyberAttack = {
+    id: number;
+    Annee: number;
+    Mois: string;
+    "Type d'attaque"?: string;
+    Attaquant?: string;
+    Victime?: string;
+    Description: string;
+};
+
 export default function Page() {
-    const [attacks, setAttacks] = useState<any[]>([]);
+    const [attacks, setAttacks] = useState<CyberAttack[]>([]);
     const [expandedId, setExpandedId] = useState<number | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const { data } = await supabase.from("cyber_attacks").select("*").order("Annee", { ascending: false }).order("Mois", { ascending: false });
-            if (data) setAttacks(data);
+            const { data } = await supabase
+                .from("cyber_attacks")
+                .select("*")
+                .order("Annee", { ascending: false })
+                .order("Mois", { ascending: false });
+
+            if (data) setAttacks(data as CyberAttack[]);
         };
         fetchData();
     }, []);

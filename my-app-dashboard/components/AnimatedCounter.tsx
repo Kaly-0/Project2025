@@ -74,7 +74,7 @@ export default function KeyStats() {
                 marginTop: "6rem",
                 marginInline: "6rem"
             }}>
-                <span style={{color: "#0070f3"}}>En 2024 en France, c'est :</span>
+                <span style={{color: "#0070f3"}}>En 2024 en France, c&apos;est :</span>
             </h2>
 
             <div
@@ -126,7 +126,7 @@ export default function KeyStats() {
                     fontSize: "0.9rem"
                 }}>
                     <li style={{lineHeight: "1.6", color: "blue"}}>
-                        Ministère de l'Intérieur —{" "}
+                        Ministère de l&apos;Intérieur —{" "}
                         <a href="https://www.interieur.gouv.fr/actualites/actualites-du-ministere/rapport-annuel-sur-cybercriminalite-2024"
                            target="_blank">
                             rapport 2024

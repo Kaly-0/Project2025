@@ -9,7 +9,7 @@ export default function AccueilConseils() {
                 <div className={styles.icon}>
                     🔒
                 </div>
-                <h1 className={styles.title}>Bienvenue dans l'espace Conseils</h1>
+                <h1 className={styles.title}>Bienvenue dans l&apos;espace Conseils</h1>
                 <p className={styles.subtitle}>
                     Souhaitez-vous obtenir des conseils personnalisés ou accéder directement à la liste ?
                 </p>
@@ -25,7 +25,3 @@ export default function AccueilConseils() {
         </div>
     );
 }
-
-//commit
-
-//ntm
