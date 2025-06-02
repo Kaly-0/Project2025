@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import '../app/dashboard-test/styles.css';
 import BarChartExample from '@/components/CountryChart';
 import CyberFeedPage from "@/app/cyber-feed/page.tsx";
-// import DashboardHome from "@/app/dashboard-test/accueil/page.tsx";
 //import StatsShowcase from "@/components/StatsShowcases.tsx";
 import Doughnut from "@/components/YearDonutChart.tsx";
 import KeyStats from "@/components/AnimatedCounter.tsx";

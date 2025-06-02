@@ -28,7 +28,7 @@ export default function AccountPage() {
             localStorage.removeItem("user");
             router.push("/Login");
         }
-    }, []);
+    }, [router]); // ✅ Ajouté ici pour corriger le warning de dépendance
 
     if (!user) return null;
 
@@ -37,8 +37,14 @@ export default function AccountPage() {
             <h1 className={styles.title}>Mon Compte</h1>
 
             <div className={styles.infoSection}>
-                <div><span className={styles.infoLabel}>Mot de passe :</span><span className={styles.infoValue}>{user.password || "*********"}</span></div>
-                <div><span className={styles.infoLabel}>Adresse email :</span><span className={styles.infoValue}>{user.email}</span></div>
+                <div>
+                    <span className={styles.infoLabel}>Mot de passe :</span>
+                    <span className={styles.infoValue}>{user.password || "*********"}</span>
+                </div>
+                <div>
+                    <span className={styles.infoLabel}>Adresse email :</span>
+                    <span className={styles.infoValue}>{user.email}</span>
+                </div>
             </div>
 
             <div className={styles.infoSection}>
