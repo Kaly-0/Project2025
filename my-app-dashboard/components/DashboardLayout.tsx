@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react';
 import '../app/dashboard-test/styles.css';
-import BarChartExample from '@/components/CountryChart'; // retire le `.tsx`
+import BarChartExample from '@/components/CountryChart';
 import CyberFeedPage from "@/app/cyber-feed/page.tsx";
 // import DashboardHome from "@/app/dashboard-test/accueil/page.tsx";
-import ChiffresChart from "@/components/ChiffresChart.tsx";
+//import StatsShowcase from "@/components/StatsShowcases.tsx";
+import Doughnut from "@/components/YearDonutChart.tsx";
+import KeyStats from "@/components/AnimatedCounter.tsx";
 
 const DashboardLayout = () => {
     const [activeSection, setActiveSection] = useState('accueil');
@@ -46,13 +48,16 @@ const DashboardLayout = () => {
                         <>
                             <h2></h2>
                             <BarChartExample/>
+                            <Doughnut />
                         </>
                     )}
 
                     {activeSection === 'chiffres' && (
                         <>
-                            <h2 style={{color: "black"}}> Analyse des chiffres 📊</h2>
-                            <ChiffresChart />
+                            <h2 style={{color: "black"}}> </h2>
+
+                            <KeyStats />
+
                         </>
                     )}
 
