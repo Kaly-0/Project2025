@@ -8,6 +8,7 @@ import CyberFeedPage from "@/app/cyber-feed/page.tsx";
 //import StatsShowcase from "@/components/StatsShowcases.tsx";
 import Doughnut from "@/components/YearDonutChart.tsx";
 import KeyStats from "@/components/AnimatedCounter.tsx";
+import DashboardWelcome from "@/components/Accueil.tsx";
 
 const DashboardLayout = () => {
     const [activeSection, setActiveSection] = useState('accueil');
@@ -41,7 +42,12 @@ const DashboardLayout = () => {
                 {/* CONTENT */}
                 <main className="dashboard-content">
                     {activeSection === 'accueil' && (
-                        <h2 style={{color: "black"}}>Bienvenue sur le tableau de bord Accueil !</h2>
+
+                        <>
+                            <h2></h2>
+                            <DashboardWelcome/>
+
+                        </>
                     )}
 
                     {activeSection === 'statistiques' && (
