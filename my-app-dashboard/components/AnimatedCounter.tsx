@@ -71,8 +71,8 @@ export default function KeyStats() {
                 fontWeight: "bold",
                 textAlign: "center",
                 width: "100%",
-                marginTop: "6rem",
-                marginInline: "6rem"
+                marginTop: "-9rem",
+                marginInline: "5rem"
             }}>
                 <span style={{color: "#0070f3"}}>En 2024 en France, c&apos;est :</span>
             </h2>
@@ -82,7 +82,7 @@ export default function KeyStats() {
                     display: "flex",
                     flexWrap: "wrap",
                     justifyContent: "center",
-                    gap: "5rem",
+                    gap: "3rem",
                     maxWidth: "1000px",
                 }}
             >
@@ -91,7 +91,7 @@ export default function KeyStats() {
                         key={i}
                         style={{
                             background: "white",
-                            padding: "5rem",
+                            padding: "6rem",
                             width: "250px",
                             height: "150px",
                             borderRadius: "150px",
@@ -121,7 +121,7 @@ export default function KeyStats() {
                     gap: "1rem",
                     justifyContent: "center",
                     listStyle: "none",
-                    padding: 60,
+                    padding: 50,
                     color: "lightblue",
                     fontSize: "0.9rem"
                 }}>
