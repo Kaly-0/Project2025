@@ -25,11 +25,11 @@ export default function WorldMap() {
         const legend = chart.children.push(
             am5.Legend.new(root, {
                 useDefaultMarker: true,
-                centerX: am5.p50,
-                x: am5.p50,
-                y: am5.percent(100),
+                centerX: am5.p0,
+                x: am5.p0,
+                y: am5.percent(70),
                 dy: -30,
-                layout: root.horizontalLayout,
+                layout: root.verticalLayout,
                 background: am5.RoundedRectangle.new(root, {
                     fill: am5.color(0xffffff),
                     fillOpacity: 1
@@ -215,7 +215,7 @@ export default function WorldMap() {
 
     return (
         <div style={{ display: "flex" }}>
-            <div id="chartdiv" style={{ width: "100%", height: "900px" }}></div>
+            <div id="chartdiv" style={{ width: "100%", height: "700px" }}></div>
             <div
                 style={{
                     width: "20%",
