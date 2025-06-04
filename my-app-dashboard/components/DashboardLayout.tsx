@@ -49,13 +49,29 @@ const DashboardLayout = () => {
                         </>
                     )}
 
+
                     {activeSection === 'statistiques' && (
                         <>
-                            <h2></h2>
-                            <BarChartExample/>
-                            <Doughnut />
+                            <h2 style={{ color: "black", textAlign: "center" }}></h2>
+                            <div style={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                justifyContent: "center",
+                                alignItems: "flex-start",
+                                gap: "2rem",
+                                padding: "2rem",
+                            }}>
+                                <div style={{ flex: "1 1 600px", minWidth: "300px", height: "500px" }}>
+                                    <BarChartExample/>
+                                </div>
+
+                                <div style={{ flex: "0 0 320px", minWidth: "300px" }}>
+                                    <Doughnut />
+                                </div>
+                            </div>
                         </>
                     )}
+
 
                     {activeSection === 'chiffres' && (
                         <>
