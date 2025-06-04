@@ -10,7 +10,7 @@ const DashboardWelcome = () => {
             <div className={styles.introSection}>
                 <h1 className={styles.title}>Tableau de bord CyberTool</h1>
                 <p className={styles.subtitle}>
-                    Visualisez en un coup d'œil les statistiques, chiffres clés et tendances des cyberattaques.
+                    Visualisez en un coup d&apos;œil les statistiques, chiffres clés et tendances des cyberattaques.
                 </p>
             </div>
 
