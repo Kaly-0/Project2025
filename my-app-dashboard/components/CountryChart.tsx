@@ -1,83 +1,105 @@
 "use client";
-import { useState } from "react";
-import {Bar} from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
+import { useLayoutEffect, useRef } from "react";
+import * as am5 from "@amcharts/amcharts5";
+import * as am5xy from "@amcharts/amcharts5/xy";
+import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+export default function AttackTypeChart() {
+    const chartRef = useRef<HTMLDivElement | null>(null);
 
-// Données simulées
-const rawData = [
-    { year: 2023, country: "USA", type: "Ransomware", count: 150 },
-    { year: 2023, country: "France", type: "Phishing", count: 60 },
-    { year: 2024, country: "France", type: "Ransomware", count: 90 },
-    { year: 2024, country: "USA", type: "Phishing", count: 80 },
-];
+    useLayoutEffect(() => {
+        if (!chartRef.current) return;
 
-export default function BarChartWithFilters() {
-    const [year, setYear] = useState(2024);
-    const [type, setType] = useState("Ransomware");
+        const root = am5.Root.new(chartRef.current);
+        root.setThemes([am5themes_Animated.new(root)]);
 
+        const chart = root.container.children.push(am5xy.XYChart.new(root, {
+            panX: false,
+            panY: false,
+            wheelX: "none",
+            wheelY: "none",
+            paddingLeft: 0,
+            paddingRight: 0,
+        }));
 
-    const filteredData = rawData.filter(d => d.year === year && d.type === type);
+        const xRenderer = am5xy.AxisRendererX.new(root, {
+            minGridDistance: 30,
+        });
 
-    const data = {
-        labels: filteredData.map(d => d.country),
-        datasets: [
-            {
-                label: `${type} (${year})`,
-                data: filteredData.map(d => d.count),
-                backgroundColor: "rgba(75, 192, 192, 0.6)",
-            },
-        ],
-    };
+        const xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+            renderer: xRenderer,
+            maxDeviation: 0.3,
+            max: 10000,
+        }));
 
-    const options = {
-        responsive: true,
-        plugins: {
-            legend: { position: "top" as const },
-            title: {
-                display: true,
-                text: "Pays impactés",
-            },
-        },
-    };
+        const yRenderer = am5xy.AxisRendererY.new(root, {
+            inversed: true,
+        });
+
+        const yAxis = chart.yAxes.push(am5xy.CategoryAxis.new(root, {
+            categoryField: "attack",
+            renderer: yRenderer,
+            tooltip: am5.Tooltip.new(root, {}),
+        }));
+
+        const series = chart.series.push(am5xy.ColumnSeries.new(root, {
+            name: "Fréquence",
+            xAxis,
+            yAxis,
+            valueXField: "value",
+            categoryYField: "attack",
+            sequencedInterpolation: true,
+            tooltip: am5.Tooltip.new(root, {
+                labelText: "{categoryY}: {valueX} cas",
+            }),
+        }));
+
+        series.columns.template.setAll({
+            cornerRadiusTL: 5,
+            cornerRadiusBL: 5,
+            strokeOpacity: 0,
+        });
+
+        series.columns.template.adapters.add("fill", (_, target) => {
+            return chart.get("colors")!.getIndex(series.columns.indexOf(target));
+        });
+
+        series.columns.template.adapters.add("stroke", (_, target) => {
+            return chart.get("colors")!.getIndex(series.columns.indexOf(target));
+        });
+
+        const data = [
+            { attack: "Phishing", value: 8900 },
+            { attack: "Ransomware", value: 8100 },
+            { attack: "Malware", value: 7300 },
+            { attack: "DDoS", value: 5100 },
+            { attack: "Credential Stuffing", value: 4700 },
+            { attack: "Supply Chain", value: 3600 },
+            { attack: "Zero-Day", value: 2900 },
+            { attack: "Cloud Compromise", value: 2600 },
+            { attack: "Social Engineering", value: 2100 },
+        ];
+
+        yAxis.data.setAll(data);
+        series.data.setAll(data);
+
+        series.appear(1000);
+        void chart.appear(1000, 100);
+
+        return () => {
+            root.dispose();
+        };
+    }, []);
 
     return (
-        <div>
-            <div style={{display: "flex", gap: "1rem", marginBottom: "1rem"}}>
-                <select value={year} onChange={e => setYear(Number(e.target.value))}>
-                    <option value={2025}>2025</option>
-                    <option value={2024}>2024</option>
-                    <option value={2023}>2023</option>
-                    <option value={2022}>2022</option>
-                    <option value={2021}>2021</option>
-                    <option value={2020}>2020</option>
-                    <option value={2019}>2019</option>
-                    <option value={2018}>2018</option>
-                    <option value={2017}>2017</option>
-                    <option value={2016}>2016</option>
-                    <option value={2015}>2015</option>
-                    <option value={2014}>2014</option>
-                    <option value={2013}>2013</option>
-                    <option value={2012}>2012</option>
-                    <option value={2011}>2011</option>
-                    <option value={2010}>2010</option>
-                    <option value={2009}>2009</option>
-                    <option value={2008}>2008</option>
-                    <option value={2007}>2007</option>
-                    <option value={2006}>2006</option>
-                </select>
-
-                <select value={type} onChange={e => setType(e.target.value)}>
-                    <option>Ransomware</option>
-                    <option>Phishing</option>
-                    <option>Malware</option>
-                </select>
-            </div>
-                <div style={{width: "600px", marginLeft: "2rem"}}>
-                <h4 style={{textAlign: "center", marginBottom: "1rem"}}>📅 Répartition annuelle</h4>
-                    <Bar data={data} options={options}/>
-            </div>
-        </div>
+        <div
+            ref={chartRef}
+            style={{
+                width: "100%",
+                maxWidth: "1400px",
+                height: "500px",
+                margin: "2rem",
+            }}
+        />
     );
 }
