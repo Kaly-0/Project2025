@@ -70,7 +70,7 @@ export default function Page() {
                     {uniqueValues.mois.map(m => <option key={m}>{m}</option>)}
                 </select>
 
-                <select value={type} onChange={e => setType(e.target.value)}><option value="">❇️ Type d'attaque</option>
+                <select value={type} onChange={e => setType(e.target.value)}><option value="">❇️ Type d&apos;attaque</option>
                     {uniqueValues.types.map(t => <option key={t}>{t}</option>)}
                 </select>
 
