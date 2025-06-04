@@ -22,13 +22,6 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-.featuredTitle {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 1rem 0;
-    color: #fff;
-}
-
 .articleCard {
     background: linear-gradient(to right, #1e3a8a, #3b82f6);
     border-radius: 10px;
@@ -79,4 +72,52 @@
 
 .readMore:hover {
     background-color: #1d4ed8;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    width: 100%;
+}
+
+.filters select {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    min-width: 160px;
+    width: 100%;
+}
+
+.filters select:focus {
+    outline: none;
+    border: 2px solid #3b82f6;
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters select {
+        width: 90%;
+    }
+}
+
+.headerBlock {
+    text-align: center;
+    margin-bottom: 1rem;
 }
