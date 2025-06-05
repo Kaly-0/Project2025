@@ -17,7 +17,7 @@ const DashboardWelcome = () => {
             <div className={styles.cardGrid}>
                 <div className={styles.card}>
                     <p>
-                        Découvrez des graphiques sur les cyberattaques par pays, type ou année.
+                        Découvrez des graphiques sur les types de cyberattaques que l'on retrouve le plus souvent.
                     </p>
                 </div>
                 <div className={styles.card}>
